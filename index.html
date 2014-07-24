@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+	<head>
+		<title>Gantsi Senior School | Homepage</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<style type="text/css">
+		#slideshow {
+			position:relative;
+			height:450px;
+		}
+
+		#slideshow IMG {
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:8;
+		}
+
+		#slideshow IMG.active {
+			z-index:10;
+		}
+
+		#slideshow IMG.last-active {
+			z-index:9;
+		}
+		#h1 { text-align: center; padding: 10px; font-size: 45px;}
+	</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+ 
+		function slideSwitch() {
+			var $active = $('#slideshow IMG.active');
+
+			if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+			var $next =  $active.next().length ? $active.next()
+				: $('#slideshow IMG:first');
+
+			$active.addClass('last-active');
+				
+			$next.css({opacity: 0.0})
+				.addClass('active')
+				.animate({opacity: 1.0}, 1000, function() {
+					$active.removeClass('active last-active');
+				});
+		}
+
+		$(function() {
+			setInterval( "slideSwitch()", 10000 );
+		});
+	 
+    </script>
+		
+		<script type="text/javascript">
+
+			var timeout         = 100;
+			var closetimer		= 0;
+			var ddmenuitem      = 0;
+
+			// open hidden layer
+			function mopen(id)
+			{	
+				// cancel close timer
+				mcancelclosetime();
+
+				// close old layer
+				if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+				// get new layer and show it
+				ddmenuitem = document.getElementById(id);
+				ddmenuitem.style.visibility = 'visible';
+
+			}
+			// close showed layer
+			function mclose()
+			{
+				if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+			}
+
+			// go close timer
+			function mclosetime()
+			{
+				closetimer = window.setTimeout(mclose, timeout);
+			}
+
+			// cancel close timer
+			function mcancelclosetime()
+			{
+				if(closetimer)
+				{
+					window.clearTimeout(closetimer);
+					closetimer = null;
+				}
+			}
+
+			// close layer when click-out
+			document.onclick = mclose; 
+			// -->
+		</script>
+		
+	</head>
+	
+	<body onload="startTime();">
+		<table id="home" cellspacing="0">
+			<tr id="homeupper"><td><img id="logo" src="images/gantsi senior logo.png" alt="emblem"></td>
+			<td id="h1">GANTSI SENIOR SECONDARY SCHOOL</td>
+			<td><div id="clock">
+				<embed src="http://www.clocktag.com/cs/dt101.swf" width="120" height="160" wmode="transparent" type="application/x-shockwave-flash"></embed>
+				</div></td>
+			</tr>
+			
+			<tr><td colspan="3" id="navbar" valign="middle" height="90" bgcolor="#009933"><div id="quicklinks" align="center">
+			<ul id="sddm">
+			<li class="first">
+			<a href="index.html" title="homepage">HOMEPAGE</a></li>
+			<li><a href="about.html" title="about">ABOUT-US</a></li>
+			<li><a href="programmes.html" title="subjects" onMouseOver="mopen('m3')" onMouseOut="mclosetime()" >PROGRAMMES</a>
+				<div id="m3" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()">
+				<a href="programmes.html">SUBJECTS OFFERED</a>
+				<a href="synopsis.html">COURSE SYNOPSIS</a>
+				</div>
+			</li>
+			<li><a href="staff.php" title="staff">STAFF</a></li>
+			<li><a href="students.php" title="students">STUDENTS</a></li>
+			<li><a href="photos.html" title="photos">GALLERIES</a></li>
+			<li><a href="results.php" title="as far back as 10 years">BGCSE-RESULTS</a></li>
+			<li><a href="miscelleneous.html" onMouseOver="mopen('m2')" onMouseOut="mclosetime()">MISCELLANEOUS</a>
+				<div id="m2" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()">
+				<a href="sports.html">Sports News</a>
+				<a href="academics/academics.html">Academic News</a>
+				<a href="meetings.html">Meetings & WORKSHOPS</a>
+				</div>
+			</li>
+		</ul>
+		</div></td></tr>
+		
+		<tr><td id="bodyleft"></td>
+		<td id="bodycenter"><div id="slideshow">
+				<img src="images/mission2.jpg" alt="" class="active" />
+				<img src="images/vision2.jpg" alt="" />
+				</div></td>
+		<td id="bodyright"></td></tr>
+		<tr><td id="footer" colspan="2">For more information<br/>Tel: 6596501<br/>Email: gantsisenior@gmail.com</td>
+		<td>Copyright&copy 2014. All Rights Reserved
+		<br/>By Lorato Maswe<br/>maswelorato@gmail.com</td></tr>
+		</table>
+	</body>
+
+</html>

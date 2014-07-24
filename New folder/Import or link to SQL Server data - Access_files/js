@@ -1,0 +1,194 @@
+var GlobalSvc=function() {
+GlobalSvc.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+GlobalSvc.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return GlobalSvc._staticInstance.get_path();},
+GetO365BoxToolbar:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetO365BoxToolbar',false,{},succeededCallback,failedCallback,userContext); },
+GetRoamingData:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetRoamingData',false,{},succeededCallback,failedCallback,userContext); },
+GetPinnedTemplates:function(PUID,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetPinnedTemplates',false,{PUID:PUID},succeededCallback,failedCallback,userContext); },
+GetCreateNewData:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetCreateNewData',false,{},succeededCallback,failedCallback,userContext); },
+GetServicesData:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetServicesData',false,{},succeededCallback,failedCallback,userContext); },
+GetRoamingAppLauncherForApp:function(appCode,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetRoamingAppLauncherForApp',false,{appCode:appCode},succeededCallback,failedCallback,userContext); },
+SyncOLSCookie:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'SyncOLSCookie',false,{},succeededCallback,failedCallback,userContext); },
+IsSignedIn:function(idProviderType,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'IsSignedIn',false,{idProviderType:idProviderType},succeededCallback,failedCallback,userContext); },
+ShortcutManagerSettings:function(services,custom,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'ShortcutManagerSettings',false,{services:services,custom:custom},succeededCallback,failedCallback,userContext); },
+GetPreferredThumbnail:function(thumburl,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetPreferredThumbnail',false,{thumburl:thumburl},succeededCallback,failedCallback,userContext); },
+GetProfileInfo:function(rgProviderInput,nScenario,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetProfileInfo',false,{rgProviderInput:rgProviderInput,nScenario:nScenario},succeededCallback,failedCallback,userContext); },
+GetDescriptionInfo:function(strMarket,requests,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetDescriptionInfo',false,{strMarket:strMarket,requests:requests},succeededCallback,failedCallback,userContext); },
+GetSearchAd:function(strSubweb,strQuery,nPage,nMainline,nSidebar,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetSearchAd',false,{strSubweb:strSubweb,strQuery:strQuery,nPage:nPage,nMainline:nMainline,nSidebar:nSidebar},succeededCallback,failedCallback,userContext); },
+GetAuthenticationURL:function(strReturnURL,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetAuthenticationURL',false,{strReturnURL:strReturnURL},succeededCallback,failedCallback,userContext); },
+GetFeedbackQuestions:function(strFeedbackKey,questionGroupIds,strAssetId,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetFeedbackQuestions',false,{strFeedbackKey:strFeedbackKey,questionGroupIds:questionGroupIds,strAssetId:strAssetId},succeededCallback,failedCallback,userContext); },
+GetFeedbackInitialQuestion:function(strFeedbackKey,strAssetId,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetFeedbackInitialQuestion',false,{strFeedbackKey:strFeedbackKey,strAssetId:strAssetId},succeededCallback,failedCallback,userContext); },
+GetFeedbackStars:function(strFeedbackKey,strAssetId,fReadOnly,averageRating,nCount,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetFeedbackStars',false,{strFeedbackKey:strFeedbackKey,strAssetId:strAssetId,fReadOnly:fReadOnly,averageRating:averageRating,nCount:nCount},succeededCallback,failedCallback,userContext); }}
+GlobalSvc.registerClass('GlobalSvc',Sys.Net.WebServiceProxy);
+GlobalSvc._staticInstance = new GlobalSvc();
+GlobalSvc.set_path = function(value) { GlobalSvc._staticInstance.set_path(value); }
+GlobalSvc.get_path = function() { return GlobalSvc._staticInstance.get_path(); }
+GlobalSvc.set_timeout = function(value) { GlobalSvc._staticInstance.set_timeout(value); }
+GlobalSvc.get_timeout = function() { return GlobalSvc._staticInstance.get_timeout(); }
+GlobalSvc.set_defaultUserContext = function(value) { GlobalSvc._staticInstance.set_defaultUserContext(value); }
+GlobalSvc.get_defaultUserContext = function() { return GlobalSvc._staticInstance.get_defaultUserContext(); }
+GlobalSvc.set_defaultSucceededCallback = function(value) { GlobalSvc._staticInstance.set_defaultSucceededCallback(value); }
+GlobalSvc.get_defaultSucceededCallback = function() { return GlobalSvc._staticInstance.get_defaultSucceededCallback(); }
+GlobalSvc.set_defaultFailedCallback = function(value) { GlobalSvc._staticInstance.set_defaultFailedCallback(value); }
+GlobalSvc.get_defaultFailedCallback = function() { return GlobalSvc._staticInstance.get_defaultFailedCallback(); }
+GlobalSvc.set_path("/_vti_bin/anonsvc/Global.svc");
+GlobalSvc.GetO365BoxToolbar= function(onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetO365BoxToolbar(onSuccess,onFailed,userContext); }
+GlobalSvc.GetRoamingData= function(onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetRoamingData(onSuccess,onFailed,userContext); }
+GlobalSvc.GetPinnedTemplates= function(PUID,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetPinnedTemplates(PUID,onSuccess,onFailed,userContext); }
+GlobalSvc.GetCreateNewData= function(onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetCreateNewData(onSuccess,onFailed,userContext); }
+GlobalSvc.GetServicesData= function(onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetServicesData(onSuccess,onFailed,userContext); }
+GlobalSvc.GetRoamingAppLauncherForApp= function(appCode,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetRoamingAppLauncherForApp(appCode,onSuccess,onFailed,userContext); }
+GlobalSvc.SyncOLSCookie= function(onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.SyncOLSCookie(onSuccess,onFailed,userContext); }
+GlobalSvc.IsSignedIn= function(idProviderType,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.IsSignedIn(idProviderType,onSuccess,onFailed,userContext); }
+GlobalSvc.ShortcutManagerSettings= function(services,custom,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.ShortcutManagerSettings(services,custom,onSuccess,onFailed,userContext); }
+GlobalSvc.GetPreferredThumbnail= function(thumburl,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetPreferredThumbnail(thumburl,onSuccess,onFailed,userContext); }
+GlobalSvc.GetProfileInfo= function(rgProviderInput,nScenario,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetProfileInfo(rgProviderInput,nScenario,onSuccess,onFailed,userContext); }
+GlobalSvc.GetDescriptionInfo= function(strMarket,requests,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetDescriptionInfo(strMarket,requests,onSuccess,onFailed,userContext); }
+GlobalSvc.GetSearchAd= function(strSubweb,strQuery,nPage,nMainline,nSidebar,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetSearchAd(strSubweb,strQuery,nPage,nMainline,nSidebar,onSuccess,onFailed,userContext); }
+GlobalSvc.GetAuthenticationURL= function(strReturnURL,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetAuthenticationURL(strReturnURL,onSuccess,onFailed,userContext); }
+GlobalSvc.GetFeedbackQuestions= function(strFeedbackKey,questionGroupIds,strAssetId,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetFeedbackQuestions(strFeedbackKey,questionGroupIds,strAssetId,onSuccess,onFailed,userContext); }
+GlobalSvc.GetFeedbackInitialQuestion= function(strFeedbackKey,strAssetId,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetFeedbackInitialQuestion(strFeedbackKey,strAssetId,onSuccess,onFailed,userContext); }
+GlobalSvc.GetFeedbackStars= function(strFeedbackKey,strAssetId,fReadOnly,averageRating,nCount,onSuccess,onFailed,userContext) {GlobalSvc._staticInstance.GetFeedbackStars(strFeedbackKey,strAssetId,fReadOnly,averageRating,nCount,onSuccess,onFailed,userContext); }
+var gtc = Sys.Net.WebServiceProxy._generateTypedConstructor;
+Type.registerNamespace('Microsoft.Online.BOX.Shell');
+if (typeof(Microsoft.Online.BOX.Shell.NavBarInfo) === 'undefined') {
+Microsoft.Online.BOX.Shell.NavBarInfo=gtc("NavBarInfo:http://schemas.datacontract.org/2004/07/Microsoft.Online.BOX.Shell");
+Microsoft.Online.BOX.Shell.NavBarInfo.registerClass('Microsoft.Online.BOX.Shell.NavBarInfo');
+}
+if (typeof(RoamingData) === 'undefined') {
+var RoamingData=gtc("RoamingData");
+RoamingData.registerClass('RoamingData');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering.Controls');
+if (typeof(Microsoft.OfficeOnline.Rendering.Controls.MRUData) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Controls.MRUData=gtc("MRUData:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Controls");
+Microsoft.OfficeOnline.Rendering.Controls.MRUData.registerClass('Microsoft.OfficeOnline.Rendering.Controls.MRUData');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Controls.MRUPlaceData) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Controls.MRUPlaceData=gtc("MRUPlaceData:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Controls");
+Microsoft.OfficeOnline.Rendering.Controls.MRUPlaceData.registerClass('Microsoft.OfficeOnline.Rendering.Controls.MRUPlaceData');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering');
+if (typeof(Microsoft.OfficeOnline.Rendering.Application) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Application=gtc("Application:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering");
+Microsoft.OfficeOnline.Rendering.Application.registerClass('Microsoft.OfficeOnline.Rendering.Application');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering.ConnectedServices');
+if (typeof(Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUDocumentItem) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUDocumentItem=gtc("MRUDocumentItem:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.ConnectedServices");
+Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUDocumentItem.registerClass('Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUDocumentItem');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUPlaceItem) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUPlaceItem=gtc("MRUPlaceItem:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.ConnectedServices");
+Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUPlaceItem.registerClass('Microsoft.OfficeOnline.Rendering.ConnectedServices.MRUPlaceItem');
+}
+if (typeof(PinnedTemplateData) === 'undefined') {
+var PinnedTemplateData=gtc("PinnedTemplateData");
+PinnedTemplateData.registerClass('PinnedTemplateData');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.ConnectedServices.RoamingTemplateItem) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.ConnectedServices.RoamingTemplateItem=gtc("RoamingTemplateItem:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.ConnectedServices");
+Microsoft.OfficeOnline.Rendering.ConnectedServices.RoamingTemplateItem.registerClass('Microsoft.OfficeOnline.Rendering.ConnectedServices.RoamingTemplateItem');
+}
+if (typeof(ShortcutsData) === 'undefined') {
+var ShortcutsData=gtc("ShortcutsData");
+ShortcutsData.registerClass('ShortcutsData');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Controls.ServicesData) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Controls.ServicesData=gtc("ServicesData:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Controls");
+Microsoft.OfficeOnline.Rendering.Controls.ServicesData.registerClass('Microsoft.OfficeOnline.Rendering.Controls.ServicesData');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Controls.ServiceItem) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Controls.ServiceItem=gtc("ServiceItem:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Controls");
+Microsoft.OfficeOnline.Rendering.Controls.ServiceItem.registerClass('Microsoft.OfficeOnline.Rendering.Controls.ServiceItem');
+}
+if (typeof(OlsAppLauncher) === 'undefined') {
+var OlsAppLauncher=gtc("OlsAppLauncher");
+OlsAppLauncher.registerClass('OlsAppLauncher');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering.Providers');
+if (typeof(Microsoft.OfficeOnline.Rendering.Providers.ProviderDetail) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Providers.ProviderDetail=gtc("ProviderDetail:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Providers");
+Microsoft.OfficeOnline.Rendering.Providers.ProviderDetail.registerClass('Microsoft.OfficeOnline.Rendering.Providers.ProviderDetail');
+}
+if (typeof(DescriptionRequestInfo) === 'undefined') {
+var DescriptionRequestInfo=gtc("DescriptionRequestInfo");
+DescriptionRequestInfo.registerClass('DescriptionRequestInfo');
+}
+if (typeof(DescriptionInfo) === 'undefined') {
+var DescriptionInfo=gtc("DescriptionInfo");
+DescriptionInfo.registerClass('DescriptionInfo');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering.Svc');
+if (typeof(Microsoft.OfficeOnline.Rendering.Svc.AdData) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Svc.AdData=gtc("AdData:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Svc");
+Microsoft.OfficeOnline.Rendering.Svc.AdData.registerClass('Microsoft.OfficeOnline.Rendering.Svc.AdData');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Svc.AdResult) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Svc.AdResult=gtc("AdResult:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Svc");
+Microsoft.OfficeOnline.Rendering.Svc.AdResult.registerClass('Microsoft.OfficeOnline.Rendering.Svc.AdResult');
+}
+if (typeof(FeedbackQuestionInfo) === 'undefined') {
+var FeedbackQuestionInfo=gtc("FeedbackQuestionInfo");
+FeedbackQuestionInfo.registerClass('FeedbackQuestionInfo');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering.Feedback');
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.Question) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.Question=gtc("Question:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.Question.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.Question');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.QuestionAnswer) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.QuestionAnswer=gtc("QuestionAnswer:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.QuestionAnswer.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.QuestionAnswer');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.StarsQuestionAnswer) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.StarsQuestionAnswer=gtc("StarsQuestionAnswer:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.StarsQuestionAnswer.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.StarsQuestionAnswer');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.MultiValueQuestionAnswer) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.MultiValueQuestionAnswer=gtc("MultiValueQuestionAnswer:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.MultiValueQuestionAnswer.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.MultiValueQuestionAnswer');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.AnswerValue) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.AnswerValue=gtc("AnswerValue:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.AnswerValue.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.AnswerValue');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.TextQuestionAnswer) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.TextQuestionAnswer=gtc("TextQuestionAnswer:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.TextQuestionAnswer.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.TextQuestionAnswer');
+}
+if (typeof(Microsoft.OfficeOnline.Rendering.Feedback.LabelQuestionAnswer) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Feedback.LabelQuestionAnswer=gtc("LabelQuestionAnswer:http://schemas.datacontract.org/2004/07/Microsoft.OfficeOnline.Rendering.Feedback");
+Microsoft.OfficeOnline.Rendering.Feedback.LabelQuestionAnswer.registerClass('Microsoft.OfficeOnline.Rendering.Feedback.LabelQuestionAnswer');
+}
+Type.registerNamespace('Microsoft.OfficeOnline.Rendering.Logging');
+if (typeof(Microsoft.OfficeOnline.Rendering.Logging.CTT) === 'undefined') {
+Microsoft.OfficeOnline.Rendering.Logging.CTT = function() { throw Error.invalidOperation(); }
+Microsoft.OfficeOnline.Rendering.Logging.CTT.prototype = {UnInitialized: 0,Minimum: 0,Search: 1,Spotlight: 2,RelatedLink: 3,Category: 4,InContent: 5,Navigation: 6,FromExternal: 8,ToExternal: 9,Message: 10,FromCHM: 11,MediaSearch: 12,PrinterFriendly: 13,EmailAssetToFriend: 41,EmailClickFromReceivedMail: 42,RelatedAssetAllQuery: 51,RelatedAssetDirectQuery: 52,RelatedAssetSpotlightQuery: 53,TemplateDownload: 71,GoToMarketplacePartner: 72,CIFDownload: 73,MPFDownload: 74,EMTraversal: 75,OtherMediaDownload: 76,CopyPasteDownload: 77,ConnectedGalleriesUse: 80,ConnectedGalleriesDownload: 81,LeftNav: 96,TopNav: 97,Ignore: 98,Unknown: 99,Client: 100,WebAttribution: 102,Copy: 103,Download: 104,AddRemoveClip: 105,Preview: 106,Paging: 107,SeeSimilar: 108,KeywordCloud: 109,ExpandableLeftNav: 110,Sort: 111,NumOnPage: 112,Filter: 113,Footer: 114,FromRSSGeneral: 140,FoundInCollectionLink: 150,SeeAllFoundInCollection: 151,ProviderExternalLink: 152,WorldwidePageResourceLink: 153,WorldwidePageMarketLink: 154,MarketToggleRegion: 155,MarketToggleTwoLanguageMarket: 156,MarketToggleManyLanguageMarket: 157,AddToUnsavedCollection: 191,AddToSavedCollection: 192,AddToSharedCollection: 193,RemoveFromUnsavedCollection: 194,RemoveFromSavedCollection: 195,RemoveFromSharedCollection: 196,CollectionViewLink: 197,VideoView: 198,SearchResultsMoreMarkets: 199,SearchResultsMoreResults: 200,FiltersExpand: 201,FiltersCollapse: 202,DirectDownload: 204,ClientTopNav: 205,Sharepoint: 206,MacClient: 207,WACClient: 208,Recommendation: 209,SilverlightFromWeb: 209,SilverlightFromClient: 210,Maximum: 210}
+Microsoft.OfficeOnline.Rendering.Logging.CTT.registerEnum('Microsoft.OfficeOnline.Rendering.Logging.CTT', true);
+}

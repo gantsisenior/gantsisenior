@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+	<head>
+		<title>Gantsi Senior School | Sports</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		
+		<style>
+			#big a, li a{
+				color: black;
+			}
+			
+			#big a:hover, li a:hover{
+				color: blue;
+			}
+			#cent {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			#slideshow {
+			position:relative;
+			height:300px; /*should be one or two more pixels than the image's height*/
+			}
+
+			#slideshow IMG {
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:8;
+			}
+
+			#slideshow IMG.active {
+				z-index:10;
+			}
+
+			#slideshow IMG.last-active {
+				z-index:9;
+			}
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+ 
+		function slideSwitch() {
+			var $active = $('#slideshow IMG.active');
+
+			if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+			var $next =  $active.next().length ? $active.next()
+				: $('#slideshow IMG:first');
+
+			$active.addClass('last-active');
+				
+			$next.css({opacity: 0.0})
+				.addClass('active')
+				.animate({opacity: 1.0}, 1000, function() {
+					$active.removeClass('active last-active');
+				});
+		}
+
+		$(function() {
+			setInterval( "slideSwitch()", 4000 );
+		});
+	 
+    </script>
+	</head>
+	
+	<body class="bodies">
+		<table id="home" cellspacing="0">
+			<tr><td colspan="3" id="headsection">SPORTS AND ATHLETICS</td></tr>
+			<tr><td colspan="3" id="navigationbar"><div class="backhome">
+				
+				<a href="index.html">Home</a>
+				</div></td></tr>
+			<tr>
+			<td valign="top" width="15%"></td>
+			<td class="middle">
+				<div id="slideshow">
+				<!--can add more pictures here...make sure the path to the image is correct.
+				  If the picture is changed, also change the height in line 24-->
+				<img src="images/bg6.jpg" alt="" class="active" />
+				<img src="images/bg5.jpg" alt="" />
+				</div>
+				
+				<br/>
+				<h3>SPORTS</h3>
+				<ul id="big"><a href="sports/football.html"><img src="images/fb.gif" alt="pic" />Football</a><br/>
+					<a href="sports/netball.html"><img src="images/nb.gif" alt="pic" />Netball</a><br/>
+					<a href="sports/softball.html"><img src="images/sb.gif" alt="pic" />Softball</a><br>
+					<a href="sports/volleyball.html"><img src="images/vb.gif" alt="pic" />Volleyball</a><br/>
+					<a href="sports/tennis.html"><img src="images/tb.gif" alt="pic" />Tennis</a><br/>
+					<a href="sports/baskettball.html"><img src="images/bb2.gif" alt="pic" />Basketball</a><br/>
+					<a href="sports/rugby.html"><img src="images/rb.gif" alt="pic" />Rugby</a><br/>
+					<a href="sports/boxing.html"><img src="images/bx.gif" alt="pic" />Boxing</a><br/>
+					<a href="sports/badminton.html"><img src="images/bd.gif" alt="pic" />Badminton</a><br/>
+					<a href="sports/table_tennis.html"><img src="images/tt.gif" alt="pic" />Table-Tennis</a><br/>
+					<a href="sports/karate.html"><img src="images/krt.gif" alt="pic" />Karate</a><br/>
+				</ul>
+				
+				<h3>ATHLETICS</h3>
+				<ul><li><a href="sports/football.html">Field Events</a></li>
+					<li><a href="sports/football.html">Track Events</a></li>
+				</ul>
+				<h3>HISTORY</h3>
+				<p>This school started participating in the year (....) until now</p>
+				
+				<h3>ACHIEVEMENTS</h3>
+				<p>Since (year) we won medals and trophies</p>
+				
+				<h3>UPDATES</h3>
+				<h4>CURRENT LOG STANDINGS(this season)</h4>
+				<h4>NEXT GAME(S)</h4>
+			</td>
+			<td width="15%"></td>
+			</tr>
+			</tr>
+		</table>
+		
+		<hr />
+	<footer>Website by Lorato Maswe&copy. All Rights Reserved</footer>
+	</body>
+</html>
